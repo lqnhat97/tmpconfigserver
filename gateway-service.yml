@@ -25,6 +25,6 @@ spring:
       - id: order-service
         uri: lb://order-service
         predicates:
-        - Path=/order/**
+        - Path=/app/order/**
         filters:
-        - RewritePath=/app/order/(?<path>.*),/$\{path}
+        - RewritePath=/order/(?<path>.*),/$\{path}
