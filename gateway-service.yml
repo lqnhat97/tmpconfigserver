@@ -19,6 +19,12 @@ spring:
       - id: customer-service
         uri: lb://customer-service
         predicates:
-        - Path=/customer/**
+        - Path=app/customer/**
         filters:
-        - RewritePath=/customer/(?<path>.*),/$\{path}
+        - RewritePath=customer/(?<path>.*),/$\{path}
+      - id: order-service
+        uri: lb://order-service
+        predicates:
+        - Path=app/order/**
+        filters:
+        - RewritePath=order/(?<path>.*),/$\{path}
