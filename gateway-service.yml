@@ -21,4 +21,4 @@ spring:
         predicates:
         - Path=/gateway/**
         filters:
-        - RewritePath=/customer/(?<path>.*,/$\{path}
+        - RewritePath=/customer/(?<path>.*),/$\{path}
